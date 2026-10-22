@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>لعبة المفعول فيه – الصف السادس</title>
+<style>
+:root{--bg:#fff0f7;--card:#fff;--tx:#2a2350;--pr:#7c3aed;--ok:#14b86a;--no:#ff4d6d;--gold:#ffb400;--mut:#6f6a8f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17142b;--card:#241f45;--tx:#f1eeff;--pr:#9b85ff;--mut:#b0a9d6}}
+:root[data-theme="dark"]{--bg:#17142b;--card:#241f45;--tx:#f1eeff;--pr:#9b85ff;--mut:#b0a9d6}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(160deg,#ffd6ec,#d6efff 50%,#fff2b8);background-attachment:fixed;color:var(--tx);font-family:"Cairo","Tajawal",Tahoma,Arial,sans-serif;min-height:100vh;display:flex;justify-content:center}
+.w{width:100%;max-width:640px;padding:16px}
+.c{background:var(--card);border-radius:22px;padding:20px;box-shadow:0 6px 24px rgba(80,60,160,.15);text-align:center}
+h1{font-size:26px;margin:6px 0;color:var(--pr)}
+.cr{color:var(--mut);font-size:14px;margin-top:14px;line-height:1.8}
+input{width:100%;padding:14px;font:inherit;font-size:18px;border-radius:14px;border:2px solid var(--pr);background:var(--bg);color:var(--tx);text-align:center;margin:12px 0}
+button{font:inherit;cursor:pointer}
+.b{background:var(--pr);color:#fff;border:0;padding:14px 28px;border-radius:14px;font-size:19px;font-weight:700}
+.top{display:flex;justify-content:space-between;font-weight:700;margin-bottom:8px;font-size:15px}
+.bar{height:12px;background:var(--bg);border-radius:9px;overflow:hidden;margin-bottom:6px}
+.bar i{display:block;height:100%;background:var(--ok);width:100%;transition:width .1s linear}
+.tm{font-size:22px;font-weight:800;margin-bottom:8px}
+.q{font-size:21px;font-weight:700;line-height:1.7;margin:10px 0 16px}
+.o{display:block;width:100%;margin:9px 0;padding:14px;border-radius:14px;border:2px solid var(--pr);background:var(--bg);color:var(--tx);font-size:18px}
+.o.ok{background:var(--ok);border-color:var(--ok);color:#fff}
+.o.no{background:var(--no);border-color:var(--no);color:#fff}
+.bonus{border:3px solid var(--gold)}
+.tag{display:inline-block;background:var(--gold);color:#3a2800;border-radius:20px;padding:4px 14px;font-weight:800;margin-bottom:6px}
+.fb{min-height:28px;font-weight:700;margin-top:6px}
+.cf{position:fixed;top:-30px;font-size:26px;animation:f 2.2s linear forwards;pointer-events:none;z-index:9}
+@keyframes f{to{transform:translateY(110vh) rotate(360deg)}}
+.cert{border:8px double var(--gold);padding:22px 12px;border-radius:12px}
+.cert .n{font-size:30px;color:var(--pr);font-weight:800;margin:8px 0;border-bottom:2px dashed var(--gold);display:inline-block;padding:0 20px}
+.cert .s{font-size:44px;font-weight:800;color:var(--ok)}
+.c{border-top:8px solid #ff6b9d}.b{background:linear-gradient(135deg,#ff6b9d,#7c3aed)}h1{background:linear-gradient(90deg,#ff4d8d,#7c3aed,#14a4ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.o:nth-child(4n+1){background:#ffe0ec;border-color:#ff6b9d;color:#3b1030}.o:nth-child(4n+2){background:#dff3ff;border-color:#3aa7ff;color:#0c2a45}.o:nth-child(4n+3){background:#fff3c9;border-color:#ffb400;color:#3d2f00}.o:nth-child(4n+4){background:#dcf7e8;border-color:#2fc77a;color:#0b3a22}
+.o.ok{background:var(--ok);border-color:var(--ok);color:#fff}.o.no{background:var(--no);border-color:var(--no);color:#fff}
+.row{display:flex;align-items:center;gap:8px;margin:8px 0}.row b{flex:1;font-size:20px}.row .o{width:auto;margin:0;padding:10px 12px;font-size:16px}
+.ch{display:inline-block;margin:5px;padding:10px 14px;border-radius:12px;border:2px solid #ffb400;background:#fff3c9;color:#3d2f00;font-size:19px}.ch.sel{background:var(--pr);border-color:var(--pr);color:#fff}.ans{min-height:56px;border:2px dashed var(--gold);border-radius:14px;padding:6px;margin:8px 0}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) body{background:linear-gradient(160deg,#2b1650,#10294d)}}
+.hide{display:none}
+@media print{body{background:#fff}.np{display:none!important}.c{box-shadow:none}:root{--card:#fff;--tx:#222}}
+</style>
+</head>
+<body>
+<div class="w">
+<div id="st" class="c">
+<div style="font-size:54px">📚✨</div>
+<h1>لعبة المفعول فيه</h1>
+<div>الصف السادس الابتدائي – منهج الإمارات</div>
+<div style="margin-top:10px;color:var(--mut);font-size:15px">٥٠ سؤالًا • مؤقت دقيقة لكل سؤال • لعبة مكافأة 🎮 كل ٥ أسئلة (نقطتان)</div>
+<input id="nm" placeholder="اكتب اسمك هنا" maxlength="40">
+<button class="b" onclick="go()">ابدأ اللعب 🚀</button>
+<div class="cr">إعداد وتقديم: أ. ريهام محمد<br>01017844930</div>
+</div>
+
+<div id="gm" class="c hide">
+<div class="top"><span id="pg"></span><span id="sc"></span></div>
+<div class="bar"><i id="bar"></i></div>
+<div class="tm" id="tm">60</div>
+<div id="bt"></div>
+<div class="q" id="q"></div>
+<div id="os"></div>
+<div class="fb" id="fb"></div>
+<div class="cr" style="margin-top:8px">إعداد وتقديم: أ. ريهام محمد – 01017844930</div>
+</div>
+
+<div id="ce" class="hide">
+<div class="c cert">
+<div style="font-size:48px">🏆</div>
+<h1>شهادة تقدير</h1>
+<div>تشهد أ. ريهام محمد بأن الطالب/ـة</div>
+<div class="n" id="cn"></div>
+<div>أتمّ/ت لعبة «المفعول فيه» للصف السادس بدرجة</div>
+<div class="s" id="cs"></div>
+<div id="cm" style="font-weight:700;margin:6px 0"></div>
+<div style="color:var(--mut);font-size:14px" id="cd"></div>
+<div class="cr">إعداد وتقديم: أ. ريهام محمد<br>01017844930</div>
+</div>
+<div class="np" style="text-align:center;margin-top:14px">
+<button class="b" onclick="window.print()">🖨️ طباعة الشهادة</button>
+<button class="b" style="background:var(--ok)" onclick="location.reload()">🔁 العب مرة أخرى</button>
+</div>
+</div>
+</div>
+
+<script>
+// [السؤال، الإجابة الصحيحة، ...الخيارات الخاطئة]  — كل سؤال خامس = جولة مكافأة
+var Q=[
+["المفعول فيه اسم منصوب يدل على:","زمان وقوع الفعل أو مكانه","من وقع عليه الفعل","من قام بالفعل","سبب وقوع الفعل"],
+["ما نوع المفعول فيه في جملة: «سافرتُ صباحًا»؟","ظرف زمان","ظرف مكان","فاعل"],
+["«جلس الطالبُ أمامَ المعلمِ»: كلمة (أمامَ) هي:","ظرف مكان","ظرف زمان","فاعل"],
+["علامة نصب (فوقَ) في «الكتابُ فوقَ المكتبِ»:","الفتحة","الكسرة","الضمة"],
+["🎁 لغز: أنا ظرف زمان، أظهر بعد الفجر وقبل الظهر. فمن أنا؟","صباحًا","ليلًا","تحتَ"],
+["أي جملة فيها ظرف زمان؟","نمتُ ليلًا","ركضتُ في الحديقةِ","أكلتُ التفاحةَ"],
+["أي الكلمات التالية ظرف مكان؟","وسطَ","غدًا","صباحًا"],
+["«سأزورك غدًا»: (غدًا) ظرف زمان منصوب وعلامة نصبه:","الفتحة","الكسرة","الضمة"],
+["في «جلستُ أمامَ المعلمِ» علامة جرّ (المعلمِ) هي:","الكسرة","الفتحة","الضمة"],
+{g:'sort',t:'صنّف كل كلمة: ظرف زمان أم ظرف مكان؟',w:[['صباحًا','ز'],['فوقَ','م'],['مساءً','ز'],['تحتَ','م']]},
+["«استيقظتُ صباحًا»: إعراب (صباحًا):","ظرف زمان منصوب وعلامة نصبه الفتحة","فاعل مرفوع وعلامة رفعه الضمة","مضاف إليه مجرور وعلامة جره الكسرة"],
+["يُسمّى المفعول فيه أيضًا:","الظرف","الحال","التمييز"],
+["حالة إعراب المفعول فيه دائمًا:","منصوب","مرفوع","مجرور"],
+["أي ظرف يختلف عن الباقي؟","غدًا","تحتَ","أمامَ","خلفَ"],
+["🎁 لغز: أنا ظرف زمان، أظهر بعد الظهر وقبل المغرب. فمن أنا؟","عصرًا","صباحًا","فوقَ"],
+["«تقف الحافلةُ عندَ البابِ»: (عندَ) هنا ظرف:","مكان","زمان","فاعل"],
+["في «جلستُ أمامَ البابِ» إعراب (البابِ):","مضاف إليه مجرور","مفعول فيه","فاعل"],
+["«انتظرتُكَ ساعةً»: (ساعةً) ظرف:","زمان","مكان","مفعول به"],
+["أي جملة فيها مفعول فيه؟","زرتُ جدي يومَ الجمعةِ","أكلتُ الطعامَ","الطالبُ مجتهدٌ"],
+{g:'order',t:'رتّب الكلمات لتكوّن جملة فيها مفعول فيه:',w:['وقفَ','الطالبُ','أمامَ','المدرسةِ']},
+["«ركضَ الطفلُ حولَ الملعبِ»: (حولَ) ظرف مكان:","منصوب بالفتحة","مجرور بالكسرة","مرفوع بالضمة"],
+["«نامَ الجنودُ ليلًا»: إعراب (ليلًا):","ظرف زمان منصوب","فاعل مرفوع","مفعول به منصوب"],
+["الفرق بين المفعول فيه والمفعول به:","فيه يدل على الزمان أو المكان، وبه يقع عليه الفعل","فيه يقع عليه الفعل، وبه يدل على الزمان","لا فرق بينهما"],
+["أي الكلمات التالية ليست ظرفًا؟","كتابٌ","تحتَ","صباحًا","بينَ"],
+["🎁 لعبة الأضداد: ضدّ الظرف (أمامَ) هو:","خلفَ","فوقَ","حينَ"],
+["«حضر الضيفُ قبلَ الغروبِ»: (قبلَ) ظرف:","زمان","مكان","حال"],
+["«سرتُ شمالَ المدينةِ»: (شمالَ) ظرف:","مكان","زمان","فاعل"],
+["«درستُ أسبوعًا كاملًا»: (أسبوعًا) ظرف:","زمان","مكان","مفعول مطلق"],
+["«وضعتُ الحقيبةَ تحتَ الطاولةِ»: (تحتَ) ظرف مكان:","منصوب وعلامة نصبه الفتحة","مجرور وعلامة جره الكسرة","مرفوع وعلامة رفعه الضمة"],
+{g:'find',t:'المس كل الظروف (زمان ومكان) في الجملة:',s:'جلسَ الطالبُ أمامَ المعلمِ صباحًا',a:['أمامَ','صباحًا']},
+['«ذهبتُ إلى المدرسةِ صباحًا»: ما المفعول فيه؟','صباحًا','ذهبتُ','المدرسةِ'],
+['«وقفَ الحارسُ خلفَ البابِ»: ما المفعول فيه؟','خلفَ','الحارسُ','البابِ'],
+['ظرف المكان يجيب عن السؤال:','أين؟','متى؟','كيف؟','لماذا؟'],
+['ظرف الزمان يجيب عن السؤال:','متى؟','أين؟','كيف؟'],
+{g:'sort',t:'صنّف كل كلمة: ظرف زمان أم ظرف مكان؟',w:[['غدًا','ز'],['حولَ','م'],['نهارًا','ز'],['يمينَ','م']]},
+['أي جملة فيها ظرف مكان؟','وقفتُ وسطَ الساحةِ','نمتُ ليلًا','أكلتُ التفاحةَ'],
+['أكمل بظرف زمان: «أذاكرُ دروسي ...»','مساءً','فوقَ','تحتَ'],
+['أكمل بظرف مكان: «القطةُ ... الكرسيِّ»','تحتَ','غدًا','مساءً'],
+['«نمتُ نهارًا»: (نهارًا) ظرف زمان منصوب وعلامة نصبه:','الفتحة','الضمة','الكسرة'],
+{g:'order',t:'رتّب الكلمات لتكوّن جملة فيها مفعول فيه:',w:['جلسَ','التلميذُ','تحتَ','الشجرةِ']},
+['كلمة (بعدَ) في «حضرتُ بعدَ الظهرِ» ظرف:','زمان','مكان','فاعل'],
+['(الظهرِ) في «حضرتُ بعدَ الظهرِ» إعرابها:','مضاف إليه مجرور','ظرف زمان','فاعل مرفوع'],
+['أي مما يلي ظرف زمان؟','حينَ','داخلَ','خارجَ'],
+['أي مما يلي ظرف مكان؟','داخلَ','مساءً','نهارًا'],
+{g:'find',t:'المس كل الظروف (زمان ومكان) في الجملة:',s:'سرتُ يمينَ الطريقِ ليلًا',a:['يمينَ','ليلًا']},
+['«وضعتُ الكتابَ داخلَ الحقيبةِ»: (داخلَ) ظرف:','مكان','زمان','مفعول به'],
+['«العلمُ نورٌ»: هل فيها مفعول فيه؟','لا','نعم، العلمُ','نعم، نورٌ'],
+['«جلسَ الطفلُ فوقَ الكرسيِّ»: (فوقَ) إعرابها:','ظرف مكان منصوب','فاعل مرفوع','مضاف إليه مجرور'],
+['«سنقابلكم عصرًا»: (عصرًا) ظرف:','زمان','مكان','حال'],
+{g:'sort',t:'صنّف كل كلمة: ظرف زمان أم ظرف مكان؟',w:[['مساءً','ز'],['أمامَ','م'],['صباحًا','ز'],['خلفَ','م'],['ليلًا','ز']]}
+];
+var $=function(i){return document.getElementById(i)},i=0,sc=0,tot=0,T=60,iv,lock,name="";
+Q.forEach(function(q,k){tot+=(k+1)%5==0?2:1});
+var AC;function ac(){try{AC=AC||new(window.AudioContext||window.webkitAudioContext)()}catch(e){}return AC}
+function tone(f,s,d,t,v){var a=ac();if(!a)return;var o=a.createOscillator(),g=a.createGain();o.type=t||"sine";o.frequency.value=f;g.gain.setValueAtTime(v||.25,a.currentTime+s);g.gain.exponentialRampToValueAtTime(.001,a.currentTime+s+d);o.connect(g);g.connect(a.destination);o.start(a.currentTime+s);o.stop(a.currentTime+s+d)}
+function good(b){[523,659,784,1047].concat(b?[1319,1568]:[]).forEach(function(f,k){tone(f,k*.11,.3)});try{var u=new SpeechSynthesisUtterance(["أحسنت!","ممتاز!","برافو!","رائع!","عظيم!"][Math.floor(Math.random()*5)]);u.lang="ar-SA";u.rate=1.05;speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){}conf(b?30:14)}
+function bad(){tone(220,0,.25,"sawtooth",.15);tone(150,.25,.35,"sawtooth",.15)}
+function conf(n){var e=["🎉","⭐","🎊","✨","🌟"];for(var k=0;k<n;k++){var s=document.createElement("span");s.className="cf";s.textContent=e[k%5];s.style.left=Math.random()*95+"%";s.style.animationDelay=Math.random()*.6+"s";document.body.appendChild(s);setTimeout(function(x){x.remove()},3200,s)}}
+function go(){name=$("nm").value.trim();if(!name){$("nm").focus();$("nm").style.borderColor="var(--no)";return}ac();$("st").classList.add("hide");$("gm").classList.remove("hide");show()}
+function show(){if(i>=Q.length)return end();lock=false;var q=Q[i],b=(i+1)%5==0;if(!Array.isArray(q))return gm(q);var opts=q.slice(1).map(function(t,k){return{t:t,c:k==0}});
+for(var k=opts.length-1;k>0;k--){var j=Math.floor(Math.random()*(k+1)),x=opts[k];opts[k]=opts[j];opts[j]=x}
+$("gm").classList.toggle("bonus",b);$("bt").innerHTML=b?'<span class="tag">🎁 جولة المكافأة – بنقطتين!</span>':"";
+$("pg").textContent="السؤال "+(i+1)+" من "+Q.length;$("sc").textContent="⭐ "+sc;$("q").textContent=q[0].replace("🎁 ","");$("fb").textContent="";
+$("os").innerHTML="";opts.forEach(function(o){var d=document.createElement("button");d.className="o";d.textContent=o.t;d.onclick=function(){pick(d,o.c)};d.dataset.c=o.c?1:0;$("os").appendChild(d)});
+if(b){tone(660,0,.15);tone(880,.15,.15);tone(1100,.3,.25)}
+T=60;tick();clearInterval(iv);iv=setInterval(function(){T-=.1;tick();if(T<=0){clearInterval(iv);pick(null,false,true)}},100)}
+function fin(p,to,x){if(lock)return;lock=true;clearInterval(iv);sc+=p;$('sc').textContent='⭐ '+sc;$('fb').style.color=p?'var(--ok)':'var(--no)';$('fb').textContent=to?'⏰ انتهى الوقت!':p==2?'🎉 إجابة كاملة! +٢':p==1?'👏 قريب جدًا! +١':'❌ حاول في اللعبة القادمة';if(p<2&&x)$('fb').textContent+=' — '+x;if(p==2)good(1);else if(p==1)good(0);else bad();setTimeout(function(){i++;show()},p<2?3200:1800)}
+function gm(q){$('gm').classList.add('bonus');$('bt').innerHTML='<span class="tag">🎮 لعبة المكافأة – بنقطتين!</span>';$('pg').textContent='السؤال '+(i+1)+' من '+Q.length;$('sc').textContent='⭐ '+sc;$('q').textContent=q.t;$('fb').textContent='';var h=$('os');h.innerHTML='';tone(660,0,.15);tone(880,.15,.15);tone(1100,.3,.25);
+T=60;tick();clearInterval(iv);iv=setInterval(function(){T-=.1;tick();if(T<=0)fin(0,1)},100);
+function mk(t,c,f){var e=document.createElement('button');e.className=c;e.textContent=t;e.onclick=f;return e}
+if(q.g=='sort'){var r=0,m=0;q.w.forEach(function(w){var row=document.createElement('div'),bs=[];row.className='row';row.innerHTML='<b>'+w[0]+'</b>';[['ز','⏳ زمان'],['م','📍 مكان']].forEach(function(o){var x=mk(o[1],'o',function(){if(lock||row.dataset.d)return;row.dataset.d=1;bs.forEach(function(y){if(y[1]==w[1])y[0].classList.add('ok')});if(o[0]!=w[1]){x.classList.add('no');m++}if(++r==q.w.length)fin(m==0?2:m==1?1:0)});bs.push([x,o[0]]);row.appendChild(x)});h.appendChild(row)})}
+else if(q.g=='find'){var s={},ws=q.s.split(' ');ws.forEach(function(w){var c=mk(w,'ch',function(){if(lock)return;s[w]=!s[w];c.classList.toggle('sel')});h.appendChild(c)});var v=mk('تحقّق ✅','b',function(){if(lock)return;var m=0;ws.forEach(function(w){if(!!s[w]!=(q.a.indexOf(w)>-1))m++});fin(m==0?2:m==1?1:0,0,'الظروف: '+q.a.join(' و '))});v.style.marginTop='12px';h.appendChild(v)}
+else{var an=document.createElement('div'),pl=document.createElement('div'),got=[];an.className='ans';q.w.slice().sort(function(){return Math.random()-.5}).forEach(function(w){var c=mk(w,'ch',function(){if(lock||c.dataset.u)return;c.dataset.u=1;c.classList.add('sel');got.push(w);var a=mk(w,'ch',function(){if(lock)return;got.splice(got.indexOf(w),1);a.remove();delete c.dataset.u;c.classList.remove('sel')});an.appendChild(a)});pl.appendChild(c)});h.appendChild(an);h.appendChild(pl);var v=mk('تحقّق ✅','b',function(){if(lock)return;fin(got.join(' ')==q.w.join(' ')?2:0,0,q.w.join(' '))});v.style.marginTop='12px';h.appendChild(v)}}
+function tick(){var s=Math.max(0,Math.ceil(T));$("tm").textContent="⏱️ "+s;$("tm").style.color=s<=10?"var(--no)":"";$("bar").style.width=(T/60*100)+"%";$("bar").style.background=s<=10?"var(--no)":"var(--ok)"}
+function pick(d,c,to){if(lock)return;lock=true;clearInterval(iv);var b=(i+1)%5==0;
+[].forEach.call($("os").children,function(x){x.disabled=true;if(x.dataset.c==1)x.classList.add("ok")});
+if(c){sc+=b?2:1;$("sc").textContent="⭐ "+sc;$("fb").textContent=b?"🎉 مكافأة رائعة! +٢":"✅ إجابة صحيحة! أحسنت";$("fb").style.color="var(--ok)";good(b)}
+else{if(d)d.classList.add("no");$("fb").textContent=to?"⏰ انتهى الوقت! الإجابة الصحيحة باللون الأخضر":"❌ حاول في السؤال القادم، الإجابة الصحيحة باللون الأخضر";$("fb").style.color="var(--no)";bad()}
+setTimeout(function(){i++;show()},c?1700:2600)}
+function end(){$("gm").classList.add("hide");$("ce").classList.remove("hide");$("cn").textContent=name;$("cs").textContent=sc+" / "+tot;
+var p=sc/tot*100;$("cm").textContent=p>=90?"🌟 ممتاز – بطل/ـة المفعول فيه!":p>=75?"👏 جيد جدًا – استمر!":p>=50?"👍 جيد – راجع الدرس وستتفوق!":"💪 حاول مرة أخرى وستتحسن!";
+$("cd").textContent=new Date().toLocaleDateString("ar-AE");if(p>=50){[0,.2,.4,.6].forEach(function(k,x){tone(523+x*130,k,.4)});conf(40)}}
+</script>
+</body>
+</html>
